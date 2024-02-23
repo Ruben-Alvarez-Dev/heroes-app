@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { HeroesApp } from "./HeroesApp";
+import { AppRouter } from "./routers/AppRouter";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<HeroesApp />);
+root.render(<AppRouter />);
