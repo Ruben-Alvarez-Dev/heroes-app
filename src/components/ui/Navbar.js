@@ -14,12 +14,31 @@ export const Navbar = () => {
 
       <div className="navbar-collapse">
         <div className="navbar-nav">
-          <NavLink className="nav-item nav-link" to="/marvel">
+          <NavLink
+            className={({ isActive }) =>
+              "nav-item nav-link " + (isActive ? "active" : "")
+            }
+            to="/marvel"
+          >
             Marvel
           </NavLink>
 
-          <NavLink className="nav-item nav-link" to="/dc">
+          <NavLink
+            className={({ isActive }) =>
+              "nav-item nav-link " + (isActive ? "active" : "")
+            }
+            to="/dc"
+          >
             DC
+          </NavLink>
+
+          <NavLink
+            className={({ isActive }) =>
+              "nav-item nav-link " + (isActive ? "active" : "")
+            }
+            to="/search"
+          >
+            Search
           </NavLink>
         </div>
       </div>
@@ -28,13 +47,9 @@ export const Navbar = () => {
         <ul className="navbar-nav ml-auto">
           <span className="nav-item nav-link text-info">Ruben</span>
 
-          <NavLink
-            onClick={handleLogout} //TODO: Logout
-            className="nav-item nav-link"
-            to="/login"
-          >
+          <button className="nav-item nav-link btn" onClick={handleLogout}>
             Logout
-          </NavLink>
+          </button>
         </ul>
       </div>
     </nav>
