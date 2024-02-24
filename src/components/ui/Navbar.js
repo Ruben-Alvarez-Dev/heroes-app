@@ -29,7 +29,7 @@ export const Navbar = () => {
           <span className="nav-item nav-link text-info">Ruben</span>
 
           <NavLink
-            onClick={handleLogout}
+            onClick={handleLogout} //TODO: Logout
             className="nav-item nav-link"
             to="/login"
           >
