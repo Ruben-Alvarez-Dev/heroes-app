@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { AuthContext } from '../../auth/authContext'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
-
 
 export const Navbar = () => {
 
+    const { user } = useContext(AuthContext)
+    console.log(user);
     const navigate = useNavigate();
 
     const handleLogout = () => {
@@ -52,7 +54,7 @@ export const Navbar = () => {
                 <ul className="navbar-nav ml-auto">
 
                     <span className="nav-item nav-link text-info">
-                        Fernando
+                        { user.name}
                     </span>
                     
                     <button 
