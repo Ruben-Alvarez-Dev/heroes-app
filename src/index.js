@@ -1,7 +1,11 @@
 import { createRoot } from "react-dom/client";
-import { AppRouter } from "./routers/AppRouter";
-
+import { HeroesApp } from "./HeroesApp";
 import "./style.css";
 
 const root = createRoot(document.getElementById("root"));
-root.render(<AppRouter />);
+root.render(
+
+    <>
+        <HeroesApp />
+    </>
+);

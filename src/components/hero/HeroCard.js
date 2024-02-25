@@ -1,76 +1,52 @@
-/* import { Link } from "react-router-dom";
-export const HeroCard = ({
-  id,
-  superhero,
-  publisher,
-  alter_ego,
-  first_appearance,
-  characters,
-}) => {
-  //
-  const imagePath = `/assets/heroes/${id}.jpg`;
+import { Link } from 'react-router-dom'
 
-  return (
-    <div className="col">
-      <div className="card">
-        <div className="row-no-gutters">
-          <div className="col-4">
-            <img src={imagePath} className="card-img" alt={superhero} />
-          </div>
-          <div className="col-8">
-            <div className="card-body">
-              <h5 className="card-title">{superhero}</h5>
-              <p className="card-text">{alter_ego}</p>
-              {alter_ego !== characters && <p className="text">{characters}</p>}
-              <p className="card-text">
-                <small className="text-muted">{first_appearance}</small>
-              </p>
-              <Link to={`./hero/${id}`}>Más...</Link>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}; */
-
-import { Link } from "react-router-dom";
 
 export const HeroCard = ({
-  id,
-  superhero,
-  publisher,
-  alter_ego,
-  first_appearance,
-  characters,
+    id,
+    superhero,
+    publisher,
+    alter_ego,
+    first_appearance,
+    characters,
 }) => {
-  const imagePath = `/assets/heroes/${id}.jpg`;
 
-  return (
-    <div className="col animate__animated animate__fadeIn">
-      <div className="card">
-        <div className="row no-gutters">
-          <div className="col-4">
-            <img src={imagePath} className="card-img" alt={superhero} />
-          </div>
-          <div className="col-8">
-            <div className="card-body">
-              <h5 className="card-title">{superhero}</h5>
-              <p className="card-text">{alter_ego}</p>
+    const imagePath = `/assets/heroes/${id}.jpg`;
 
-              {alter_ego !== characters && (
-                <p className="text-muted">{characters}</p>
-              )}
+    return (
+        <div className="col animate__animated animate__fadeIn">
+            <div className="card">
+                
+                <div className="row no-gutters">
+                    <div className="col-4">
+                        <img src={ imagePath } className="card-img" alt={superhero} />
+                    </div>
+                    <div className="col-8">
 
-              <p className="card-text">
-                <small className="text-muted">{first_appearance}</small>
-              </p>
+                        <div className="card-body">
 
-              <Link to={`/hero/${id}`}>Más...</Link>
+                            <h5 className="card-title">{superhero}</h5>
+                            <p className="card-text">{alter_ego}</p>
+
+                            {
+                                ( alter_ego !== characters ) 
+                                    && <p className="text-muted">{ characters }</p>
+                            }
+
+                            <p className="card-text">
+                                <small className="text-muted">{ first_appearance }</small>
+                            </p>
+
+                            
+                            <Link to={`/hero/${id}`}>
+                                Más...
+                            </Link>
+
+                        </div>
+
+                    </div>
+                </div>
+
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  );
-};
+    )
+}

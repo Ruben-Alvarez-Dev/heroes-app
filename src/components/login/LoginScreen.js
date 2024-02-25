@@ -1,15 +1,28 @@
-export const LoginScreen = () => {
-  const handleLogin = () => {
-    console.log("handleLogin");
-  };
+import { useNavigate } from 'react-router-dom';
 
-  return (
-    <>
-      <h1>Login Screen</h1>
-      <hr />
-      <button className="btn btn-primary" onClick={handleLogin}>
-        Login
-      </button>
-    </>
-  );
-};
+
+export const LoginScreen = () => {
+
+    const navigate = useNavigate();
+
+    const handleLogin = () => {
+        navigate('/marvel', {
+            replace: true
+        });
+    }
+
+
+    return (
+        <div className="container mt-5">
+            <h1>Login</h1>
+            <hr />
+
+            <button 
+                className="btn btn-primary"
+                onClick={ handleLogin }
+                >
+                    Login
+            </button>
+        </div>
+    )
+}
